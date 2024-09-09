@@ -1,0 +1,10 @@
+Architecture: Pool has a common Queue and each thread in the pool has its own Queue.
+It works on the principle of work stealing algorithm,i.e, if a worker Threads queue is empty, it can steal work from
+the queue of other threads in the pool.
+Not always effective, used in recursive cases where problem can be divided into smaller sub problems and can be executed
+in parallel
+
+When we call .fork() on the task it is submitted to the pool: Async computation.
+    1) if submitted from outside,added to the Common queue
+    2) if called from the Wt, submitted to the queue of the wt
+    a thread can execute other tasks, but will be blocked on the call of task.join()

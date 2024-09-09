@@ -1,0 +1,8 @@
+- When tx.join() is called the thread from which it is called has to wait for it to complete or if we provide a time as
+an arg it will wait for tx for the given time at maximum, if it doesnt finish it will start its execution.....
+
+- Synchronised keyword - only one thread can access the the critical section also make it an atomic unit of instruction.
+-can be used on methods, create blocks-> must use a single monitior(any object can be used as monitior) across all threads
+-- for instance method -- this, for static method class Object.
+
+
